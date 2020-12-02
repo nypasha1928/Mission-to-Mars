@@ -31,16 +31,16 @@ def scrape_all():
 
 
 def mars_news(browser):
-   
-   # Scrape Mars News
-   # Visit the mars nasa news site
-   url = 'https://mars.nasa.gov/news/'
-   browser.visit(url)
 
-   # Optional delay for loading the page
-   browser.is_element_present_by_css("ul.item_list li.slide", wait_time=1)
+    # Scrape Mars News
+    # Visit the mars nasa news site
+    url = 'https://mars.nasa.gov/news/'
+    browser.visit(url)
 
-   # Convert the browser html to a soup object and then quit the browser
+    # Optional delay for loading the page
+    browser.is_element_present_by_css("ul.item_list li.slide", wait_time=1)
+
+    # Convert the browser html to a soup object and then quit the browser
     html = browser.html
     news_soup = soup(html, 'html.parser')
 
@@ -56,7 +56,7 @@ def mars_news(browser):
         return None, None
 
     return news_title, news_p
-
+    
 # 10.3.4 Scrape Mars Data: Featured Image .
 # ## JPL Space Images Featured Image
 
